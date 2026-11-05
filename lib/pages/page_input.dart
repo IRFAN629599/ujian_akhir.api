@@ -90,11 +90,11 @@ class _PageInputState extends State<PageInput> {
   }
 
   Widget inputField(
-      String label,
-      TextEditingController controller,
-      IconData ikon, {
-        int maxLines = 1,
-      }) {
+    String label,
+    TextEditingController controller,
+    IconData ikon, {
+    int maxLines = 1,
+  }) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 16),
       child: TextField(
@@ -182,12 +182,12 @@ class _PageInputState extends State<PageInput> {
               onPressed: sedangMenyimpan ? null : simpanData,
               icon: sedangMenyimpan
                   ? const SizedBox(
-                width: 18,
-                height: 18,
-                child: CircularProgressIndicator(
-                  strokeWidth: 2,
-                ),
-              )
+                      width: 18,
+                      height: 18,
+                      child: CircularProgressIndicator(
+                        strokeWidth: 2,
+                      ),
+                    )
                   : const Icon(Icons.save),
               label: Text(
                 sedangMenyimpan ? 'Menyimpan...' : 'Simpan Data',

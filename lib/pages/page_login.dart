@@ -14,10 +14,10 @@ class PageLogin extends StatefulWidget {
 
 class _PageLoginState extends State<PageLogin> {
   final TextEditingController emailController =
-  TextEditingController();
+      TextEditingController();
 
   final TextEditingController passwordController =
-  TextEditingController();
+      TextEditingController();
 
   bool obscurePassword = true;
   bool isLoading = false;
@@ -80,7 +80,6 @@ class _PageLoginState extends State<PageLogin> {
       if (response.statusCode == 200 &&
           data is Map &&
           data['success'] == true) {
-
         final prefs = await SharedPreferences.getInstance();
 
         await prefs.setString(
@@ -97,6 +96,7 @@ class _PageLoginState extends State<PageLogin> {
           'email',
           email,
         );
+
         debugPrint('LOGIN BERHASIL');
         debugPrint('NAMA: ${data['name']}');
 
@@ -108,12 +108,11 @@ class _PageLoginState extends State<PageLogin> {
             builder: (context) => const PageDashboard(),
           ),
         );
-
       } else {
         final String message =
-        data is Map && data['message'] is String
-            ? data['message']
-            : 'Login gagal. Periksa email dan password.';
+            data is Map && data['message'] is String
+                ? data['message']
+                : 'Login gagal. Periksa email dan password.';
 
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
@@ -133,7 +132,6 @@ class _PageLoginState extends State<PageLogin> {
           backgroundColor: Colors.red,
         ),
       );
-
     } catch (e) {
       debugPrint('ERROR LOGIN: $e');
 
@@ -145,7 +143,6 @@ class _PageLoginState extends State<PageLogin> {
           backgroundColor: Colors.red,
         ),
       );
-
     } finally {
       if (mounted) {
         setState(() {
@@ -232,11 +229,11 @@ class _PageLoginState extends State<PageLogin> {
                       onPressed: isLoading
                           ? null
                           : () {
-                        setState(() {
-                          obscurePassword =
-                          !obscurePassword;
-                        });
-                      },
+                              setState(() {
+                                obscurePassword =
+                                    !obscurePassword;
+                              });
+                            },
                     ),
                   ),
                 ),
@@ -250,7 +247,7 @@ class _PageLoginState extends State<PageLogin> {
                       backgroundColor: biru,
                       foregroundColor: Colors.white,
                       disabledBackgroundColor:
-                      biru.withAlpha(150),
+                          biru.withAlpha(150),
                       padding: const EdgeInsets.symmetric(
                         vertical: 14,
                       ),
@@ -258,13 +255,13 @@ class _PageLoginState extends State<PageLogin> {
                     onPressed: isLoading ? null : login,
                     child: isLoading
                         ? const SizedBox(
-                      height: 22,
-                      width: 22,
-                      child: CircularProgressIndicator(
-                        strokeWidth: 2,
-                        color: Colors.white,
-                      ),
-                    )
+                            height: 22,
+                            width: 22,
+                            child: CircularProgressIndicator(
+                              strokeWidth: 2,
+                              color: Colors.white,
+                            ),
+                          )
                         : const Text('Login'),
                   ),
                 ),
