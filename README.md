@@ -1,4 +1,4 @@
-# aplikasi_guru
+# aplikasi_guru API
 
 Aplikasi Mobile Untuk Guru
 
@@ -243,7 +243,7 @@ Melalui pengerjaan proyek ini, saya mendapatkan pengalaman dalam mengembangkan a
 **Dibuat oleh:** Mochammad Irfan Ardiansyah
                  Umar Hafidz Muhyidin
 
-**Program Keahlian:** Rekayasa Perangkat Lunak (RPL)
+**Program Keahlian:** Rekayasa Perangkat Lunak (XI.RPL)
 
 
 
